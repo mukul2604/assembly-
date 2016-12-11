@@ -7,22 +7,23 @@ MOV DX,0FFF8H ;;;;;PORT A AS O/P
 MOV AL,0F0H          ;PORT A CONFIGURED AS 11110000
 OUT DX,AL
 MOV DX,0FFFAH  ;;;;;;;PORT B AS INPUT
-L1: IN AL,DX
-    AND AL,0FH
-    JZ L1
+L1: ;IN AL,DX
+    ;AND AL,0FH
+    ;JZ L1
+    MOV AL,04
     SHR AL,1
-FL:  SHR AL,1
-     INC BL
-     JNC FL
-     MOV AL,03
-     MUL BL                  ;;; NUMBER OF STEPS STORED IN AX
-     XCHG AH,AL
-     MOV DX,0FFF8H 
+FL: SHR AL,1
+    INC BL
+    JNC FL
+    MOV AL,03
+    MUL BL                  ;;; NUMBER OF STEPS STORED IN AX
+    XCHG BH,AL
+    MOV DX,0FFF8H 
 UPFL: OUT DX,AL
       INC AL
-      MOV CX,0AAH               ;;PUT DX=0FFFE
+      MOV CX,0AAH               
       DELA:LOOP DELA      
-      CMP AH,AL
+      CMP BH,AL
       JAE UPFL
       HLT
 

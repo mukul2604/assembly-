@@ -1,0 +1,13 @@
+ORG 100H
+MOV BX,06
+MOV CX,BX
+MOV AX,01H
+L1:PUSH BX
+   DEC BX
+   JNZ L1
+ 
+L2: POP BX
+    MUL BX
+    DEC CX
+    JNZ L2
+   HLT 

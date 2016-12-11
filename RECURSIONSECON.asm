@@ -1,0 +1,14 @@
+ORG 100H
+MOV AX,07H
+MOV BX,AX
+CALL FACT
+FACT PROC NEAR
+    CMP AX,2
+     JBE RET_P
+     DEC BX
+     MUL BX
+     CMP BX,2
+     JE RET_P
+     CALL FACT
+  RET_P: ENDP
+         END
