@@ -1,0 +1,73 @@
+From ssh://scm.cs.stonybrook.edu:130/scm/cse506git-f16/hw3-cse506p02
+ * branch            master     -> FETCH_HEAD
+Updating 176200d..b7087cab
+Fast-forward
+ arch/x86/entry/common.c    |  72 +++++-
+ arch/x86/entry/entry_64.S  |   5 +-
+ hw3/Makefile               |  45 +++-
+ hw3/README.HW3             |   1 +
+ hw3/README.HW3.pdf         | Bin 0 -> 858393 bytes
+ hw3/bin/.bin               |   1 +
+ hw3/call_chdir_vec1.c      |  72 ++++++
+ hw3/call_denied_vec1.c     |  56 +++++
+ hw3/call_mkdir_vec2.c      |  44 ++++
+ hw3/call_open_creat_vec1.c |  62 +++++
+ hw3/call_unlink_vec2.c     |  55 +++++
+ hw3/display_process_vec.c  | 134 +++++++++++
+ hw3/display_vectors.c      | 104 +++++++++
+ hw3/httpd_mkdir_vec2.c     |  44 ++++
+ hw3/install_module.sh      |  12 +-
+ hw3/kill_child_vec2.c      |  46 ++++
+ hw3/kill_parent_vec2.c     |  39 ++++
+ hw3/program_launcher.c     |  73 ++++++
+ hw3/remove_module.sh       |   3 +
+ hw3/sys_vector1.c          | 210 +++++++++++++----
+ hw3/sys_vector2.c          | 217 ++++++++++++++++++
+ hw3/sys_vector3.c          | 413 ++++++++++++++++++++++++++++++++++
+ hw3/sys_xclone.h           |  30 ++-
+ hw3/syscall_table.h        | 325 ++++++++++++++++++++++++++
+ hw3/trace_hardlink_vec3.c  |  44 ++++
+ hw3/trace_link_vec3.c      |  44 ++++
+ hw3/trace_rmdir_vec3.c     |  44 ++++
+ hw3/trace_symlink_vec3.c   |  44 ++++
+ hw3/trace_unlink_vec3.c    |  44 ++++
+ hw3/trace_write_vec3.c     |  46 ++++
+ hw3/update_process_vec.c   |  84 +++++++
+ hw3/vec2_deny_test.c       |  46 ++++
+ hw3/vec3_deny_test.c       |  58 +++++
+ hw3/vec_ioctl.c            | 372 ++++++++++++++++++++++++++++++
+ hw3/vec_ioctl.h            |  65 ++++++
+ hw3/xclone.c               |  18 +-
+ include/linux/sched.h      |   2 +-
+ kernel/exit.c              |  13 +-
+ kernel/fork.c              | 153 +++++++++----
+ kernel/pid.c               |   1 +
+ kernel/sys_xclone.c        | 170 +++++++++++---
+ 41 files changed, 3169 insertions(+), 142 deletions(-)
+ create mode 100644 hw3/README.HW3.pdf
+ create mode 100644 hw3/bin/.bin
+ create mode 100644 hw3/call_chdir_vec1.c
+ create mode 100644 hw3/call_denied_vec1.c
+ create mode 100644 hw3/call_mkdir_vec2.c
+ create mode 100644 hw3/call_open_creat_vec1.c
+ create mode 100644 hw3/call_unlink_vec2.c
+ create mode 100644 hw3/display_process_vec.c
+ create mode 100644 hw3/display_vectors.c
+ create mode 100644 hw3/httpd_mkdir_vec2.c
+ create mode 100644 hw3/kill_child_vec2.c
+ create mode 100644 hw3/kill_parent_vec2.c
+ create mode 100644 hw3/program_launcher.c
+ create mode 100644 hw3/sys_vector2.c
+ create mode 100644 hw3/sys_vector3.c
+ create mode 100644 hw3/syscall_table.h
+ create mode 100644 hw3/trace_hardlink_vec3.c
+ create mode 100644 hw3/trace_link_vec3.c
+ create mode 100644 hw3/trace_rmdir_vec3.c
+ create mode 100644 hw3/trace_symlink_vec3.c
+ create mode 100644 hw3/trace_unlink_vec3.c
+ create mode 100644 hw3/trace_write_vec3.c
+ create mode 100644 hw3/update_process_vec.c
+ create mode 100644 hw3/vec2_deny_test.c
+ create mode 100644 hw3/vec3_deny_test.c
+ create mode 100644 hw3/vec_ioctl.c
+ create mode 100644 hw3/vec_ioctl.h
